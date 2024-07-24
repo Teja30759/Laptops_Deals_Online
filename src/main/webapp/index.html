@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSP</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, hr, a {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* General body styling */
+        body {
+            background-color: lightgrey;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        /* Header styling */
+        h1 {
+            margin-bottom: 20px;
+            color: #333; /* Greyish black color */
+        }
+
+        /* Horizontal rule styling */
+        hr {
+            border: none;
+            border-top: 2px solid black;
+            margin: 20px 0;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #555;
+            padding: 10px 8px; /* Adjusted padding */
+            margin: 0 3px; /* Adjusted margin */
+            border-radius: 3px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        /* Add responsive behavior */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .navbar a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+
+        /* Logout button */
+        .logout-btn {
+            background-color: #dc3545;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 3px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+            margin-left: 10px; /* Adjusted margin */
+        }
+
+        .logout-btn:hover {
+            background-color: #c82333;
+        }
+
+        /* Image styling */
+        .image-container {
+            width: 100%;
+            height: calc(100vh - 120px); /* Adjusted height to fit screen */
+            overflow: hidden;
+            position: relative;
+            z-index: 0;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <b><h1>WELCOME</h1></b>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="addproduct.html">Add Product</a>
+        <a href="viewproducts.jsp">View Products</a>
+        <a href="UpdatePrices.html">Update Product</a>
+        <a href="delete.html">DELETE Product</a>
+        <a href="navbar.html" class="logout-btn">Logout</a>
+    </div>
+    <div class="image-container">
+        <img src="images/a.jpeg" alt="Background Image">
+    </div>
+    <hr>
+</body>
+</html>

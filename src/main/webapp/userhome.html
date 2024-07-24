@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa; /* Fallback color */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background-color: #343a40;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #495057;
+        }
+
+        .navbar .center {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .logout-btn {
+            background-color: #dc3545;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background-color: #c82333;
+        }
+
+        .cart-btn {
+            display: flex;
+            align-items: center;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-right: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .cart-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .cart-btn span {
+            margin-left: 5px;
+        }
+
+        .navbar-link {
+            margin-left: 10px; /* Adjust margin as needed */
+        }
+
+        /* Add some padding to the body to avoid content being under the navbar */
+        .content {
+            padding-top: 150px; /* Adjust this value to your needs */
+            text-align: center;
+            color: #333; /* Greyish black color */
+        }
+
+        /* Slideshow background */
+        .background-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* Ensure correct paths to images */
+            background: url('images/p.jpeg') center/cover no-repeat; /* Preview image */
+            animation: slide 45s infinite;
+        }
+
+        @keyframes slide {
+            0% { background-image: url('images/u6.jpg'); } /* Initial image */
+            33% { background-image: url('images/u1.jpeg'); }
+            66% { background-image: url('images/u7.jpeg'); }
+            100% { background-image: url('images/3.jpeg'); } /* End of loop */
+        }
+
+        /* Responsive styling */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar .center {
+                justify-content: flex-start;
+                width: 100%;
+            }
+
+            .navbar a {
+                padding: 10px 20px;
+                width: 100%;
+                text-align: left;
+                margin: 5px 0;
+            }
+
+            .navbar a.logout-btn {
+                width: auto;
+                text-align: center;
+                margin-left: auto;
+            }
+
+            .navbar-link {
+                margin-left: 0; /* Adjust for mobile layout */
+                margin-top: 10px; /* Move below "Home" link */
+            }
+
+            .content {
+                padding-top: 100px; /* Adjust this value for smaller screens */
+            }
+
+            .background-slideshow {
+                top: 0;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="viewproducts.jsp" class="navbar-link">View Products</a>
+        <div class="center">
+            <h1>Welcome</h1>
+        </div>
+       <a href="view_cart.jsp" class="cart-btn">🛒 <span>VIEW CART</span></a> <!-- Cart button with cart symbol and text -->
+        <a href="navbar.html" class="logout-btn">Logout</a>
+    </div>
+    <div class="content">
+        <!-- Main content here -->
+    </div>
+    <div class="background">
+        <div class="background-static"></div>
+        <div class="background-slideshow"></div>
+    </div>
+</body>
+</html>

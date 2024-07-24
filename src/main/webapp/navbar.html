@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navbar with Background Slideshow</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling */
+  }
+
+  .navbar {
+    background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    z-index: 1; /* Ensure it appears on top */
+  }
+
+  .navbar-brand {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .navbar li {
+    margin-right: 10px;
+  }
+
+  .navbar li:first-child {
+    margin-left: 10px; /* Added margin for spacing */
+  }
+
+  .navbar li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .navbar li a:hover {
+    background-color: #555;
+  }
+
+  .slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place it behind the navbar */
+    background: url('images/p.jpeg') center/cover no-repeat; /* Set initial background */
+    animation: slide 45s infinite; /* Duration is 45s to include the initial 15s */
+  }
+
+  @keyframes slide {
+    0% { background-image: url('images/p.jpeg'); } /* Initial image */
+    33% { background-image: url('images/2.jpeg'); }
+    66% { background-image: url('images/3.jpeg'); }
+    100% { background-image: url('images/4.jpeg'); } /* End of loop */
+  }
+</style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-brand">Home</div>
+    <ul>
+      <li><a href="adminlogin.html">Admin Login</a></li>
+      <li><a href="userlogin.html">User Login</a></li>
+    </ul>
+  </div>
+  <div class="slideshow"></div>
+</body>
+</html>
